@@ -1,2 +1,2 @@
-Cd  C:\Users\SARAN\IdeaProjects\Opencart
+cd C:\Users\SARAN\IdeaProjects\Opencart
 mvn test
