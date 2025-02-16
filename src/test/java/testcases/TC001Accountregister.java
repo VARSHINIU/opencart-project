@@ -1,5 +1,7 @@
 package testcases;
 
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,8 +10,8 @@ import pageobjects.Accountregistrationpage;
 import testbase.baseclass;
 
 public class TC001Accountregister extends baseclass {
-
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     void validation(){
         logger.info("************starting*******");
         try {

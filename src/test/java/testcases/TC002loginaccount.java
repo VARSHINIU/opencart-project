@@ -1,4 +1,6 @@
 package testcases;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,6 +20,7 @@ import java.time.Duration;
 public class TC002loginaccount extends baseclass {
 
     @Test(dataProvider ="loginValidInvaliddatas", dataProviderClass = DataProviders.class)
+    @Severity(SeverityLevel.CRITICAL)
     public void  loginvalidation(String mail,String pass, String exp){
 
 
