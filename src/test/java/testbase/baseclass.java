@@ -9,9 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -23,7 +21,6 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.Parameters;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -35,18 +32,18 @@ public class baseclass {
    public  WebDriverWait wait;
 
 
-    @BeforeClass
+    @BeforeSuite
    // @Parameters({"browser"})
    public  void setup()  {
 //        if(browsername.equalsIgnoreCase("chrome")){
-//            System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\myproject\\browser drivers\\chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\Opencart\\browser drivers\\chromedriver.exe");
 //            driver=new ChromeDriver();
 //        }else if(browsername.equalsIgnoreCase("edge")){
-//            System.setProperty("webdriver.edge.driver","C:\\Users\\SARAN\\IdeaProjects\\myproject\\browser drivers\\msedgedriver.exe");
+//            System.setProperty("webdriver.edge.driver","C:\\Users\\SARAN\\IdeaProjects\\Opencart\\browser drivers\\msedgedriver.exe");
 //            driver =new EdgeDriver();
 //        }else{
 //            System.out.println("no browser instaal in my ysytem  -executing default browser");
-//            System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\myproject\\browser drivers\\chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\Opencart\\browser drivers\\chromedriver.exe");
 //            driver=new ChromeDriver();
 //        }
 //
@@ -61,7 +58,9 @@ public class baseclass {
         logger= LogManager.getLogger(this.getClass());
 
         System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\Opencart\\browser drivers\\chromedriver.exe");
-        if (driver == null) {  // Check if driver is already initialized
+        if (driver == null) {
+            System.setProperty("webdriver.chrome.driver","C:\\Users\\SARAN\\IdeaProjects\\Opencart\\browser drivers\\chromedriver.exe");
+//           // Check if driver is already initialized
             driver = new ChromeDriver();
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
