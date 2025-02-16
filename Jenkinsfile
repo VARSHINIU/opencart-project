@@ -15,7 +15,7 @@ pipeline {
         stage('Generate Report') {
             steps {
                 allure([
-                    results: [[path: 'allure-reports']]
+                    results: [[path: 'target/allure-results']]
                 ])
             }
         }
