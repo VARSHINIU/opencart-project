@@ -19,5 +19,13 @@ pipeline {
                 ])
             }
         }
+        stage('Notify Team') {
+            steps {
+                emailext subject: 'Test Execution Report',
+                         body: 'Tests completed. Check the Jenkins dashboard for details.',
+                         recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+            }
+        }
+
     }
 }
